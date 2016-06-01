@@ -17,15 +17,16 @@
     - kernel-devel
     - "kernel-devel-{{ kernel_release.stdout }}"
     - libselinux-python
+    - java
     - maven
     - git
 
 - name: Adding epel repository
-  shell: rpm -ivh http://mirror.pnl.gov/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+  shell: rpm -ivh http://mirror.pnl.gov/epel/7/x86_64/e/epel-release-7-6.noarch.rpm
 
 - name: install the latest version of Ansible
   yum:
-    name:"{{ item }}"
+    name: "{{ item }}"
     state: latest
   with_items:
     - python-setuptools
